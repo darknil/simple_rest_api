@@ -12,6 +12,7 @@ const articleSchema = new db.Schema({
   },
   comments: [
     {
+      _id: { type: db.Schema.Types.ObjectId, auto: true },
       userId: { type: db.Schema.Types.ObjectId, ref: 'User' },
       text: { type: String, required: true },
       createdAt: { type: Date, default: Date.now },

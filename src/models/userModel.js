@@ -10,18 +10,18 @@ class UserModel {
       })
       const savedUser = await newUser.save()
       return savedUser
-    } catch (error) {
-      throw error
+    } catch (e) {
+      console.log(e)
     }
   }
-  async findUserByName(name) {
+  async findUserByName(username) {
     try {
-      const foundUser = await User.findOne({ name })
+      const foundUser = await User.findOne({ username })
         .populate('savedArticles')
         .exec()
       return foundUser
-    } catch (error) {
-      throw error
+    } catch (e) {
+      console.log(e)
     }
   }
 }
