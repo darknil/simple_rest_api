@@ -15,9 +15,9 @@ router.post('/articles/create', articleController.createArticle)
 router.get('/articles', articleController.getArticle)
 // get article by name with get request /api/articles?title=name
 // {
-//   "category" : "test",
+//
 //   "title" : "test",
-//   "body" : "test body"
+//
 // }
 //
 router.post('/articles/:articleId/comments', commentsController.addComment)
