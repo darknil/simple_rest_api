@@ -13,7 +13,8 @@ registration
 ![image](https://github.com/darknil/simple_rest_api/assets/45723342/637d668f-6f81-44eb-80e8-7fa7f0f2c1d7)
 
 login
-![image](https://github.com/darknil/simple_rest_api/assets/45723342/c2313c7c-923b-46bb-9d28-b3fe54458fb9)
+![image](https://github.com/darknil/simple_rest_api/assets/45723342/e7ad2060-6f6f-468d-9764-912258f69a5f)
+
 
 incorect password
   ![image](https://github.com/darknil/simple_rest_api/assets/45723342/d4d0c677-577b-4388-aad9-48c41b034785)
@@ -22,7 +23,8 @@ create article
 ![image](https://github.com/darknil/simple_rest_api/assets/45723342/3a99fb71-3cb7-48e6-949f-ada4ad40e3e9)
 
 find article
-![image](https://github.com/darknil/simple_rest_api/assets/45723342/c55e9ee3-69b8-4c4c-a923-ec03a2c91f81)
+![image](https://github.com/darknil/simple_rest_api/assets/45723342/fcee2ede-a4ca-47b6-9d0d-6a5ad3d2ba5e)
+
 
 add comment
 ![image](https://github.com/darknil/simple_rest_api/assets/45723342/95957070-9af5-4983-b66f-37248a5312b5)
