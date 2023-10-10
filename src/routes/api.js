@@ -13,17 +13,14 @@ router.post('/articles/create', articleController.createArticle)
 //
 
 router.get('/articles', articleController.getArticle)
-// get article by name with get request /api/articles?title=name
-// {
-//
-//   "title" : "test",
-//
-// }
-//
+// get article by name with get request /api/articles?id=articleId
+
 router.post('/articles/:articleId/comments', commentsController.addComment)
 // post comment to article by id with post request and json /api/articles/:articleId/comments
-// {
-//   "userId": "userId",
+//{
+//  jwt in headers
+//}
+//{
 //   "text": "your comment"
 // }
 //

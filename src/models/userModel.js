@@ -14,6 +14,28 @@ class UserModel {
       console.log(e)
     }
   }
+  async findUserById(userId) {
+    try {
+      const foundUser = await User.findOne({ _id: userId })
+        .populate('savedArticles')
+        .exec()
+      return foundUser
+    } catch (e) {
+      console.log(e)
+      throw e
+    }
+  }
+  async findUserByEmail(email) {
+    try {
+      const foundUser = await User.findOne({ email })
+        .populate('savedArticles')
+        .exec()
+      return foundUser
+    } catch (e) {
+      console.log(e)
+      throw e
+    }
+  }
   async findUserByName(username) {
     try {
       const foundUser = await User.findOne({ username })
@@ -22,6 +44,7 @@ class UserModel {
       return foundUser
     } catch (e) {
       console.log(e)
+      throw e
     }
   }
 }

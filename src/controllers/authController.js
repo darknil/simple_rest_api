@@ -1,16 +1,18 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 const UserModel = require('../models/userModel')
+const TokenService = require('../service/token-service')
 
 class AuthController {
   async registration(req, res) {
     try {
       const { username, email, password } = req.body
-      const candidate = await UserModel.findUserByName(username)
+      console.log(username, email, password)
+      const candidate = await UserModel.findUserByEmail(email)
       if (candidate) {
         return res
           .status(400)
-          .json({ message: 'user with that name already exists' })
+          .json({ message: 'user with that email already exists' })
       }
       const password_hash = await bcrypt.hash(password, 10)
       const newUser = new User({
@@ -20,8 +22,10 @@ class AuthController {
       })
       const savedUser = await newUser.save()
 
-      res.status(200).json({ message: 'registations successful ' })
-    } catch (error) {
+      res
+        .status(200)
+        .json({ data: { savedUser }, message: 'registration successful' })
+    } catch (e) {
       console.log(e)
     }
   }
@@ -36,8 +40,10 @@ class AuthController {
       if (!isPasswordValid) {
         return res.status(401).json({ message: 'Incorrect password' })
       }
-      res.json({ message: 'correct password' })
-    } catch (error) {
+      const payload = { userId: user.id, username: user.username }
+      const token = await TokenService.generateToken(payload)
+      res.status(200).json({ message: 'Authentication successful', token })
+    } catch (e) {
       console.log(e)
     }
   }

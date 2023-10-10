@@ -13,9 +13,9 @@ class ArticleController {
   }
   async getArticle(req, res) {
     try {
-      const { title } = req.query
-      console.log(title)
-      const article = await articleModel.getByTitle(title)
+      const articleId = req.query.id
+      console.log(articleId)
+      const article = await articleModel.get(articleId)
       if (!article) {
         res.status(500).json({ error: 'Could not find article' })
       }
