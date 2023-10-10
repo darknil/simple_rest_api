@@ -17,12 +17,12 @@ class ArticleController {
       console.log(articleId)
       const article = await articleModel.get(articleId)
       if (!article) {
-        res.status(500).json({ error: 'Could not find article' })
+        return res.status(500).json({ error: 'Could not find article' })
       }
       res.status(200).json(article)
     } catch (e) {
       console.log(e)
-      res.status(500).json({ error: 'Internal server error' })
+      return res.status(500).json({ error: 'Internal server error' })
     }
   }
 }
