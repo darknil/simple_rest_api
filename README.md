@@ -22,7 +22,8 @@ create article
 ![image](https://github.com/darknil/simple_rest_api/assets/45723342/3a99fb71-3cb7-48e6-949f-ada4ad40e3e9)
 
 find article
-![image](https://github.com/darknil/simple_rest_api/assets/45723342/c55e9ee3-69b8-4c4c-a923-ec03a2c91f81)
+![image](https://github.com/darknil/simple_rest_api/assets/45723342/fcee2ede-a4ca-47b6-9d0d-6a5ad3d2ba5e)
+
 
 add comment
 ![image](https://github.com/darknil/simple_rest_api/assets/45723342/95957070-9af5-4983-b66f-37248a5312b5)
