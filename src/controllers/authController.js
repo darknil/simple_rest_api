@@ -33,6 +33,10 @@ class AuthController {
     try {
       const { username, password } = req.body
       const user = await UserModel.findUserByName(username)
+      let isAdmin = false
+      if (username === 'admin') {
+        isAdmin = true
+      }
       if (!user) {
         return res.status(400).json({ message: 'User not found' })
       }
@@ -40,9 +44,12 @@ class AuthController {
       if (!isPasswordValid) {
         return res.status(401).json({ message: 'Incorrect password' })
       }
-      const payload = { userId: user.id, username: user.username }
+
+      const payload = { sub: user.id, name: user.username, admin: isAdmin }
       const token = await TokenService.generateToken(payload)
-      res.status(200).json({ message: 'Authentication successful', token })
+      res
+        .status(200)
+        .json({ data: { token: token }, message: 'Authentication successful' })
     } catch (e) {
       console.log(e)
     }

@@ -14,6 +14,7 @@ const articleSchema = new db.Schema({
     {
       _id: { type: db.Schema.Types.ObjectId, auto: true },
       userId: { type: db.Schema.Types.ObjectId, ref: 'User' },
+      username: { type: String, ref: 'User' },
       text: { type: String, required: true },
       createdAt: { type: Date, default: Date.now },
     },
